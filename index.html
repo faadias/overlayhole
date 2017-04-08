@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<script src="jquery.min.js"></script>
+	<script src="jquery.overlayhole.js"></script>
+	
+	<title>Overlay Hole</title>
+</head>
+<body>
+<h3>Clique sobre um elemento para destacar</h3>
+<button id="cmdShow">Show</button><button id="cmdHide" style="display: none;">Hide</button>
+<div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu vulputate turpis, sit amet elementum tellus. Maecenas mattis, metus a lobortis pharetra, leo eros pretium eros, et mollis mi mauris quis nisl. Donec nec ligula lacus. Proin vehicula semper
+        felis. Curabitur eget efficitur lorem. Cras tincidunt nisl id dolor porta, quis convallis justo lobortis. Donec imperdiet risus tortor, vitae varius turpis rhoncus vitae. Maecenas quis urna est. Suspendisse potenti. Maecenas sit amet ipsum nec
+        libero bibendum convallis. Donec in posuere mauris, ut aliquam odio. Nullam auctor iaculis tincidunt. Pellentesque id massa turpis. Morbi dictum eget felis nec tristique. Mauris auctor quam ac purus volutpat luctus.</p>
+        <select>
+          <option>-- Selecione --</option>
+          <option>Opção 1</option>
+          <option>Opção 2</option>
+          <option>Opção 3</option>
+        </select>
+    <p>Donec vehicula eros leo, sollicitudin sollicitudin sem convallis eu. Nam porta molestie purus, eget euismod nisl auctor at. Praesent venenatis suscipit lacus id imperdiet. Sed nec rhoncus enim. Fusce sapien est, tempus in tellus ac, mattis interdum
+        ante. Nunc id libero vitae justo pretium viverra. Fusce nec ligula vel ex pellentesque porta. Etiam non rutrum nisl, ac tempor elit.</p>
+    <p>Nulla ac consequat nunc, congue consectetur urna. Donec aliquet nunc sit amet leo condimentum blandit. Phasellus vulputate nunc id diam ullamcorper gravida. Aliquam fringilla sollicitudin arcu et pulvinar. Nam in vestibulum ex. Morbi aliquet nulla
+        arcu, aliquet consectetur nibh luctus quis. Cras viverra vestibulum nunc ac elementum. In eu viverra erat. Aliquam lobortis erat et mauris luctus ultricies. Sed a nibh urna. Nullam magna turpis, rhoncus ut ultrices sit amet, cursus in risus. Nunc
+        lacinia et felis vel viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc id nulla id nibh egestas fringilla. Praesent a finibus felis.</p>
+    <p>Maecenas erat tellus, rutrum a nulla eget, tincidunt condimentum nisl. Phasellus et purus id metus feugiat accumsan ac vel arcu. Nunc venenatis imperdiet nisi, nec bibendum arcu bibendum quis. Morbi pulvinar elementum justo vitae pellentesque. Proin
+        mattis nibh eget est lobortis egestas. Nam egestas mauris ac mauris lacinia varius. Mauris posuere diam ac sapien rhoncus viverra. Curabitur placerat interdum risus a pellentesque. Sed quam sapien, auctor non est non, facilisis volutpat nisl.
+        Donec porta libero tortor, ut pulvinar diam interdum ac. Sed nisi nisl, volutpat id aliquam et, fermentum in magna. Duis eget eleifend tellus, ut lacinia nunc. Pellentesque viverra viverra accumsan. Vivamus porta tortor a facilisis placerat. Etiam
+        convallis odio dolor, vel accumsan odio tristique nec. Sed dapibus felis vitae ligula lacinia, in mollis mi vulputate.</p>
+    <p>Nam posuere fermentum feugiat. Proin at porta lorem. Cras tincidunt est vitae lectus blandit ornare. Sed convallis dolor id mollis vulputate. Donec nibh urna, euismod sed leo tempus, volutpat semper dolor. Sed luctus fermentum lectus eget semper.
+        Nullam sed tristique dolor, eget mattis nisl. Ut rhoncus lacus lectus, porta porta nunc posuere facilisis. Vestibulum nulla lacus, mollis ac pharetra in, hendrerit tempus eros. Sed ac tortor ac magna commodo aliquam ac non arcu. Quisque in venenatis
+        eros. Vestibulum scelerisque, est at consequat congue, lacus sem dignissim dui, non congue ante nulla vitae enim. Nunc quis enim volutpat, euismod dui sit amet, sollicitudin elit.</p>
+</div>
+</body>
+
+<script>
+	$.overlayhole.init();
+	$.overlayhole.targets = $(".content > p:first-child,.content > select,button").toArray();
+	
+	$("#cmdShow").click(function() {
+		$(this).hide();
+		$("#cmdHide").show();
+		$.overlayhole.show();
+	});
+	
+	$("#cmdHide").click(function() {
+		$(this).hide();
+		$("#cmdShow").show();
+		$.overlayhole.hide();
+	});
+</script>
+</html>
