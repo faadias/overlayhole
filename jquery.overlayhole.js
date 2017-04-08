@@ -1,5 +1,5 @@
 /* overlayhole - An Overlay with a Hole as a JQuery Plugin!
- * Version 1.0.0
+ * Version 1.0.1
  * 
  * Copyright 2017 Felipe Dias
  * 
@@ -126,10 +126,10 @@
 			});
 
 			overlayBottom.css({
-				top : _rect.bottom+_settings.padding+"px",
+				top : _rect.bottom+scrollY+_settings.padding+"px",
 				left : "0px",
 				width : Math.max(width,0)+"px",
-				height : Math.max(height-_rect.bottom+scrollY-_settings.padding,0)+"px"
+				height : Math.max(height-_rect.bottom-scrollY-_settings.padding,0)+"px"
 			});
 
 			overlayLeft.css({
@@ -142,7 +142,7 @@
 			overlayRight.css({
 				top : _rect.top+scrollY-_settings.padding+"px",
 				left : _rect.right+scrollX+_settings.padding+"px",
-				width : Math.max(width-_rect.right+scrollX-_settings.padding,0)+"px",
+				width : Math.max(width-_rect.right-scrollX-_settings.padding,0)+"px",
 				height : Math.max(_rect.height+2*_settings.padding,0)+"px"
 			});
 		}
