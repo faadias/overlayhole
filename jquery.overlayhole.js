@@ -1,5 +1,5 @@
 /* overlayhole - An Overlay with a Hole as a JQuery Plugin!
- * Version 1.0.1
+ * Version 1.0.0
  * 
  * Copyright 2017 Felipe Dias
  * 
@@ -51,6 +51,11 @@
 						-webkit-user-select: auto !important;\
 						user-select: auto !important;\
 						pointer-events: auto !important\
+					}\
+					.overlayhole-target * {\
+						-webkit-user-select: auto !important;\
+						user-select: auto !important;\
+						pointer-events: auto !important\
 					}"
 				).appendTo("head");
 			
@@ -87,7 +92,7 @@
 		}
 		
 		function _markTargets() {
-			$(".overlayhole-target").addClass("overlayhole-target");
+			$(".overlayhole-target").removeClass("overlayhole-target");
 			_targets.forEach( node => $(node).addClass("overlayhole-target") );
 		}
 		
