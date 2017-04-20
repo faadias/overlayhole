@@ -1,5 +1,5 @@
 /* overlayhole - An Overlay with a Hole as a JQuery Plugin!
- * Version 1.0.0
+ * Version 1.0.1
  * 
  * Copyright 2017 Felipe Dias
  * 
@@ -191,6 +191,10 @@
 					_calcRects();
 					_markTargets();
 				}
+			},
+			
+			get rect() {
+				return _rect === null ? null : { top : _rect.top, left : _rect.left, width : _rect.width, height : _rect.height };
 			}
 		}
 	})();
